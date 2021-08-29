@@ -49,6 +49,8 @@ export type ScrollPickerProps = {
   itemHeight?: number;
   wrapperHeight?: number;
   wrapperColor?: string;
+  activeItemTextStyle?: object;
+  itemTextStyle?: object;
 };
 
 export default function ScrollPicker({
@@ -108,8 +110,8 @@ export default function ScrollPicker({
       <Text
         style={
           isSelected
-            ? [styles.itemText, styles.itemTextSelected]
-            : styles.itemText
+            ? props.activeItemTextStyle
+            : props.itemTextStyle
         }
       >
         {data}
